@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="python日记2(random), 洞悉之眼">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,14 +30,15 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -327,10 +328,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -395,11 +490,63 @@
             <div id="articleContent">
                 <p>事业常成于坚忍，毁于急躁。我在沙漠中曾亲眼看见，匆忙的旅人落在从容的后边；疾驰的骏马落在后头，缓步的骆驼继续向前。——萨迪<br>A career is often made in perseverance and destroyed in impatience. I have seen with my own eyes in the desert that the hurried traveler falls behind the subdued one; the galloping horse falls behind, the slow camel continues on. ——Sadie</p>
 <hr>
-<h5 id="1-random的应用"><a href="#1-random的应用" class="headerlink" title="1.random的应用"></a>1.random的应用</h5><p>下面是一个具体的实验小项目，目标是利用random.uniform模块结合round函数实现随机小数的生成，以及偏差的计算：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import random                                                                                                                                             </span><br><span class="line"></span><br><span class="line"><span class="comment">#随机数字生成器默认偏差控制在1-10%</span></span><br><span class="line">import random</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"-----欢迎使用随机数字生成器-----"</span>)</span><br><span class="line"></span><br><span class="line">bazhi=input(<span class="string">"请输入靶值："</span>)         <span class="comment">#预先设定一个目标值</span></span><br><span class="line">bazhi=<span class="built_in">float</span>(bazhi)                         <span class="comment">#目标值可能带有小数点所以转换成浮点类型</span></span><br><span class="line">range_=input(<span class="string">"请输入你想要偏差控制在百分之："</span>)       <span class="comment">#百分比表示成分数</span></span><br><span class="line">range_=int(range_)</span><br><span class="line">range_n=range_/100</span><br><span class="line">                                                             <span class="comment">#计算目标值（靶值）范围上下限</span></span><br><span class="line">up_=bazhi+bazhi*range_n</span><br><span class="line">up_=round(up_,1)</span><br><span class="line">down_=bazhi-bazhi*range_n</span><br><span class="line">down_=round(down_,1)</span><br><span class="line"></span><br><span class="line">n=input(<span class="string">"请输入想要的随机数个数:"</span>)     <span class="comment">#利用循环控制输出随机数的个数</span></span><br><span class="line">n=int(n)</span><br><span class="line">sum_=0.0</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(0,n):</span><br><span class="line">    </span><br><span class="line">    random_n=random.uniform(down_,up_)     <span class="comment">#使用random.uniform模块生成浮点类型随机数</span></span><br><span class="line">    random_n=round(random_n,1)                    <span class="comment">#利用round函数，保留小数点位数</span></span><br><span class="line">    time.sleep(1)</span><br><span class="line">    <span class="built_in">print</span>(f<span class="string">"第{i+1}个数据为:"</span>,random_n)</span><br><span class="line">    sum_=sum_+random_n</span><br><span class="line">average=sum_/n</span><br><span class="line">average=round(average,1)                                       <span class="comment">#计算偏差差</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"生成数据的均值为:"</span>,average)</span><br><span class="line">sd=(average/bazhi-1)*100      </span><br><span class="line">sd=str(round(sd,2))+<span class="string">"%"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"数据均值与靶值的偏差为:"</span>,sd)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<p>输出的结果为：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-----欢迎使用随机数字生成器-----                                                                                                                                             </span><br><span class="line">请输入靶值：115</span><br><span class="line">请输入你想要偏差控制在百分之：5</span><br><span class="line">请输入想要的随机数个数:10</span><br><span class="line">第1个数据为: 110.0</span><br><span class="line">第2个数据为: 112.5</span><br><span class="line">第3个数据为: 111.1</span><br><span class="line">第4个数据为: 110.0</span><br><span class="line">第5个数据为: 110.3</span><br><span class="line">第6个数据为: 120.8</span><br><span class="line">第7个数据为: 113.7</span><br><span class="line">第8个数据为: 120.4</span><br><span class="line">第9个数据为: 111.7</span><br><span class="line">第10个数据为: 114.9</span><br><span class="line">生成数据的均值为: 113.5</span><br><span class="line">数据均值与靶值的偏差为: -1.3%</span><br><span class="line"></span><br><span class="line">进程已结束，退出代码为 0</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-random的应用"><a href="#1-random的应用" class="headerlink" title="1.random的应用"></a>1.random的应用</h4><p>下面是一个具体的实验小项目，目标是利用random.uniform模块结合round函数实现随机小数的生成，以及偏差的计算：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> random                                                                                                                                             
 
+<span class="token comment" spellcheck="true">#随机数字生成器默认偏差控制在1-10%</span>
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"-----欢迎使用随机数字生成器-----"</span><span class="token punctuation">)</span>
+
+bazhi<span class="token operator">=</span>input<span class="token punctuation">(</span><span class="token string">"请输入靶值："</span><span class="token punctuation">)</span>         <span class="token comment" spellcheck="true">#预先设定一个目标值</span>
+bazhi<span class="token operator">=</span>float<span class="token punctuation">(</span>bazhi<span class="token punctuation">)</span>                         <span class="token comment" spellcheck="true">#目标值可能带有小数点所以转换成浮点类型</span>
+range_<span class="token operator">=</span>input<span class="token punctuation">(</span><span class="token string">"请输入你想要偏差控制在百分之："</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">#百分比表示成分数</span>
+range_<span class="token operator">=</span>int<span class="token punctuation">(</span>range_<span class="token punctuation">)</span>
+range_n<span class="token operator">=</span>range_<span class="token operator">/</span><span class="token number">100</span>
+                                                             <span class="token comment" spellcheck="true">#计算目标值（靶值）范围上下限</span>
+up_<span class="token operator">=</span>bazhi<span class="token operator">+</span>bazhi<span class="token operator">*</span>range_n
+up_<span class="token operator">=</span>round<span class="token punctuation">(</span>up_<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+down_<span class="token operator">=</span>bazhi<span class="token operator">-</span>bazhi<span class="token operator">*</span>range_n
+down_<span class="token operator">=</span>round<span class="token punctuation">(</span>down_<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+n<span class="token operator">=</span>input<span class="token punctuation">(</span><span class="token string">"请输入想要的随机数个数:"</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">#利用循环控制输出随机数的个数</span>
+n<span class="token operator">=</span>int<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+sum_<span class="token operator">=</span><span class="token number">0.0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    
+    random_n<span class="token operator">=</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span>down_<span class="token punctuation">,</span>up_<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">#使用random.uniform模块生成浮点类型随机数</span>
+    random_n<span class="token operator">=</span>round<span class="token punctuation">(</span>random_n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>                    <span class="token comment" spellcheck="true">#利用round函数，保留小数点位数</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"第{i+1}个数据为:"</span><span class="token punctuation">,</span>random_n<span class="token punctuation">)</span>
+    sum_<span class="token operator">=</span>sum_<span class="token operator">+</span>random_n
+average<span class="token operator">=</span>sum_<span class="token operator">/</span>n
+average<span class="token operator">=</span>round<span class="token punctuation">(</span>average<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>                                       <span class="token comment" spellcheck="true">#计算偏差差</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"生成数据的均值为:"</span><span class="token punctuation">,</span>average<span class="token punctuation">)</span>
+sd<span class="token operator">=</span><span class="token punctuation">(</span>average<span class="token operator">/</span>bazhi<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span>      
+sd<span class="token operator">=</span>str<span class="token punctuation">(</span>round<span class="token punctuation">(</span>sd<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"%"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"数据均值与靶值的偏差为:"</span><span class="token punctuation">,</span>sd<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出的结果为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>欢迎使用随机数字生成器<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>                                                                                                                                             
+请输入靶值：<span class="token number">115</span>
+请输入你想要偏差控制在百分之：<span class="token number">5</span>
+请输入想要的随机数个数<span class="token punctuation">:</span><span class="token number">10</span>
+第<span class="token number">1</span>个数据为<span class="token punctuation">:</span> <span class="token number">110.0</span>
+第<span class="token number">2</span>个数据为<span class="token punctuation">:</span> <span class="token number">112.5</span>
+第<span class="token number">3</span>个数据为<span class="token punctuation">:</span> <span class="token number">111.1</span>
+第<span class="token number">4</span>个数据为<span class="token punctuation">:</span> <span class="token number">110.0</span>
+第<span class="token number">5</span>个数据为<span class="token punctuation">:</span> <span class="token number">110.3</span>
+第<span class="token number">6</span>个数据为<span class="token punctuation">:</span> <span class="token number">120.8</span>
+第<span class="token number">7</span>个数据为<span class="token punctuation">:</span> <span class="token number">113.7</span>
+第<span class="token number">8</span>个数据为<span class="token punctuation">:</span> <span class="token number">120.4</span>
+第<span class="token number">9</span>个数据为<span class="token punctuation">:</span> <span class="token number">111.7</span>
+第<span class="token number">10</span>个数据为<span class="token punctuation">:</span> <span class="token number">114.9</span>
+生成数据的均值为<span class="token punctuation">:</span> <span class="token number">113.5</span>
+数据均值与靶值的偏差为<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1.3</span><span class="token operator">%</span>
+
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -794,6 +941,100 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
 
 </main>
@@ -1035,7 +1276,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

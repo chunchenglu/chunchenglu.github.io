@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 洞悉之眼">
+    <meta name="keywords" content="python日记4（网页信息提取的3种方法）, 洞悉之眼">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 洞悉之眼</title>
+    <title>python日记4（网页信息提取的3种方法） | 洞悉之眼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">python日记4（网页信息提取的3种方法）</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BEre/">
+                                <span class="chip bg-color">正则表达re</span>
                             </a>
                         
-                            <a href="/tags/theam/">
-                                <span class="chip bg-color">theam</span>
+                            <a href="/tags/BeautifulSoup/">
+                                <span class="chip bg-color">BeautifulSoup</span>
+                            </a>
+                        
+                            <a href="/tags/xpath/">
+                                <span class="chip bg-color">xpath</span>
                             </a>
                         
                     </div>
@@ -450,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -463,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-10
                 </div>
                 
 
@@ -484,20 +488,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <p>事业常成于坚忍，毁于急躁。我在沙漠中曾亲眼看见，匆忙的旅人落在从容的后边；疾驰的骏马落在后头，缓步的骆驼继续向前。——萨迪<br>A career is often made in perseverance and destroyed in impatience. I have seen with my own eyes in the desert that the hurried traveler falls behind the subdued one; the galloping horse falls behind, the slow camel continues on. ——Sadie</p>
+<hr>
+<h4 id="1-正则表达式re"><a href="#1-正则表达式re" class="headerlink" title="1.正则表达式re"></a>1.正则表达式re</h4><p>表达式写法</p>
+<hr>
+<h4 id="2-BeautifulSoup"><a href="#2-BeautifulSoup" class="headerlink" title="2.BeautifulSoup"></a>2.BeautifulSoup</h4><p><strong>1）什么是 BeautifulSoup？</strong><br>BeautifulSoup是 python 的一个库，最主要的功能是从网页抓取数据，它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。 </p>
+<p>BeautifulSoup 自动将输入文档转换为 Unicode 编码，输出文档转换为 utf-8编码。BeautifulSoup 支持 Python 标准库中的 HTML 解析器，还支持一些第三方的解析器，如果我们不安装它，则 Python 会使用 Python 默认的解析器，lxml 解析器更加强大，速度更快，推荐安装。</p>
+<p><strong>2）Python 标准库</strong><br>BeautifulSoup(markup, “html.parser”)<br>Python 的内置标准库<br>执行速度适中<br>文档容错能力强<br>Python 2.7.3 or 3.2.2)前的版本中文档容错能力差</p>
+<p><strong>3)lxml HTML 解析器</strong><br>BeautifulSoup(markup, “lxml”)<br>速度快<br>文档容错能力强<br>需要安装 C 语言库</p>
+<p><strong>4)lxml XML 解析器</strong><br>BeautifulSoup(markup, [“lxml”, “xml”])BeautifulSoup(markup, “xml”)<br>速度快<br>唯一支持 XML 的解析器<br>需要安装 C 语言库</p>
+<p>**5)使用方法<br>首先导入 bs4 库</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup                                                                                             
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>创建一个字符串，后面的例子用它来演示</p>
+<pre class="line-numbers language-python"><code class="language-python">html <span class="token operator">=</span><span class="token triple-quoted-string string">'''
+&lt;html>&lt;head>&lt;title>The Dormouse's story&lt;/title>&lt;/head>          
+&lt;body>
+&lt;p class="title" name="dromouse">&lt;b>The Dormouse's story&lt;/b>&lt;/p>
+&lt;p class="story">Once upon a time there were three little sisters; and their names were
+&lt;a href="http://example.com/elsie" class="sister" id="link1">&lt;!-- Elsie -->&lt;/a>,
+&lt;a href="http://example.com/lacie" class="sister" id="link2">Lacie&lt;/a> and
+&lt;a href="http://example.com/tillie" class="sister" id="link3">Tillie&lt;/a>;
+and they lived at the bottom of a well.&lt;/p>
+&lt;p class="story">...&lt;/p>
+'''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h4 id="3-xpath"><a href="#3-xpath" class="headerlink" title="3.xpath"></a>3.xpath</h4><hr>
 
                 
             </div>
@@ -514,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">ChunCheng Lu</a>
+                    <a href="/about" rel="external nofollow noreferrer">chunchuenglu</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -524,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/07/hexo%E7%B1%BB%E5%9E%8B%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/">http://example.com/2021/07/07/hexo%E7%B1%BB%E5%9E%8B%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/</a>
+                    <a href="http://example.com/2021/07/10/python%E6%97%A5%E8%AE%B04/">http://example.com/2021/07/10/python%E6%97%A5%E8%AE%B04/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,7 +554,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">ChunCheng Lu</a>
+                    <a href="/about" target="_blank">chunchuenglu</a>
                     !
                 </span>
             </div>
@@ -562,12 +579,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BEre/">
+                                    <span class="chip bg-color">正则表达re</span>
                                 </a>
                             
-                                <a href="/tags/theam/">
-                                    <span class="chip bg-color">theam</span>
+                                <a href="/tags/BeautifulSoup/">
+                                    <span class="chip bg-color">BeautifulSoup</span>
+                                </a>
+                            
+                                <a href="/tags/xpath/">
+                                    <span class="chip bg-color">xpath</span>
                                 </a>
                             
                         </div>
@@ -743,24 +764,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/08/python%E6%97%A5%E8%AE%B01/">
+                <a href="/2021/07/10/hexo-md%E6%96%87%E6%A1%A3%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="python日记1（数据类型）">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="hexo-Markdown文档语法">
                         
-                        <span class="card-title">python日记1（数据类型）</span>
+                        <span class="card-title">hexo-Markdown文档语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python中包含很多数据类型，清楚的学习好这些数据类型才能让我们更好的理解和运用。
+                            hexo-Markdown 文档语法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-10
                         </span>
                         <span class="publish-author">
                             
@@ -777,32 +798,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/str/">
-                        <span class="chip bg-color">str</span>
-                    </a>
-                    
-                    <a href="/tags/int/">
-                        <span class="chip bg-color">int</span>
-                    </a>
-                    
-                    <a href="/tags/float/">
-                        <span class="chip bg-color">float</span>
-                    </a>
-                    
-                    <a href="/tags/dir/">
-                        <span class="chip bg-color">dir</span>
-                    </a>
-                    
-                    <a href="/tags/set/">
-                        <span class="chip bg-color">set</span>
-                    </a>
-                    
-                    <a href="/tags/tuple/">
-                        <span class="chip bg-color">tuple</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -813,50 +810,45 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/07/hexo%E7%B1%BB%E5%9E%8B%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/">
+                <a href="/2021/07/10/python%E6%97%A5%E8%AE%B03/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python日记3（requests）">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">python日记3（requests）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            python中常用的网页请求模式requests.get;requests.session的运用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/theam/">
-                        <span class="chip bg-color">theam</span>
+                    <a href="/tags/requests/">
+                        <span class="chip bg-color">requests</span>
                     </a>
                     
                 </div>

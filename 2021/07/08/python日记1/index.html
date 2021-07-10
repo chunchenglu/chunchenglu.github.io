@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="python日记1（数据类型）, 洞悉之眼">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,14 +30,15 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -327,10 +328,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -412,62 +507,158 @@
                 <p>事业常成于坚忍，毁于急躁。我在沙漠中曾亲眼看见，匆忙的旅人落在从容的后边；疾驰的骏马落在后头，缓步的骆驼继续向前。——萨迪<br>A career is often made in perseverance and destroyed in impatience. I have seen with my own eyes in the desert that the hurried traveler falls behind the subdued one; the galloping horse falls behind, the slow camel continues on. ——Sadie</p>
 <hr>
 <h3 id="python中常见的数据类型"><a href="#python中常见的数据类型" class="headerlink" title="python中常见的数据类型"></a>python中常见的数据类型</h3><p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。等号（=）用来给变量赋值。等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。</p>
-<h5 id="1-字符串（str）"><a href="#1-字符串（str）" class="headerlink" title="1.字符串（str）"></a>1.字符串（str）</h5><p>基于字符串的示例：                                </p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"zhangsan"</span>                                                                                                       </span><br><span class="line">name1 = <span class="string">"张三"</span></span><br><span class="line">name2 = <span class="string">"123456"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name2))</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-字符串（str）"><a href="#1-字符串（str）" class="headerlink" title="1.字符串（str）"></a>1.字符串（str）</h4><p>基于字符串的示例：                                </p>
+<pre class="line-numbers language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">"zhangsan"</span>                                                                                                       
+name1 <span class="token operator">=</span> <span class="token string">"张三"</span>
+name2 <span class="token operator">=</span> <span class="token string">"123456"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行程序会输出以下结果：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'str'</span>&gt;                                                                                                                                                                    </span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>                                                                                                                                                                    
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>结果显示“xxx”内部的默认为字符串,换而言之如果不带“”会是什么类型那？</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = 12345                                                                                                                                                                    </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token number">12345</span>                                                                                                                                                                    
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>输出结果：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'int'</span>&gt;                                                                                                                                                                    </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'int'</span><span class="token operator">></span>                                                                                                                                                                    
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>实验结果可以表明我们可以用“”将非字符串类型的数据转换为字符串，当然也可而已运用python内置命令str将数据转换为字符串例如:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = 123456                                                                                                                                                                    </span><br><span class="line">name =str(name)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token number">123456</span>                                                                                                                                                                    
+name <span class="token operator">=</span>str<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>输出结果为：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'str'</span>&gt;                                                                                                                                                                    </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>                                                                                                                                                                    
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>除此之外字符串的索引功能也很重要,字符串的索引默认从0开始例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"zhangsan"</span>                                                                                                                                                                    </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line">name =name[2]</span><br><span class="line"><span class="built_in">print</span>(name)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">"zhangsan"</span>                                                                                                                                                                    
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+name <span class="token operator">=</span>name<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>输出结果为：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'str'</span>&gt;                                                                                                                                                                    </span><br><span class="line">a</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>                                                                                                                                                                    
+a
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <hr>
-<h5 id="2-整数型（int）"><a href="#2-整数型（int）" class="headerlink" title="2.整数型（int）"></a>2.整数型（int）</h5><p>整数类型常用于小数点取整，或者将input输入的数据转化为整数方便计算例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#类型转换</span></span><br><span class="line">a = input(<span class="string">"我的年龄是："</span>)                                                                                                                                                                    </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line">a =int(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment">#取整</span></span><br><span class="line">b =3.1415                                                                                                                                                                    </span><br><span class="line">b = int(b)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">我的年龄是：20                                                                                                                                                                    </span><br><span class="line">&lt;class 'str'&gt;</span><br><span class="line">&lt;class 'int'&gt;</span><br><span class="line">3</span><br></pre></td></tr></tbody></table></figure>
-<hr>
-<h5 id="3-浮点型（float）"><a href="#3-浮点型（float）" class="headerlink" title="3.浮点型（float）"></a>3.浮点型（float）</h5><p>浮点的用法与int如出一辙，这里就不多举例子了，重要的是数据类型与相应的数据要保持一致例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"圆周率是："</span>)                                                                                                                                                                    </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line">b =int(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line">b=<span class="built_in">float</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() with base 10: <span class="string">'3.1415926'</span></span><br></pre></td></tr></tbody></table></figure>
-<p>这就是类型判断错误引起的报错，正确的写法应该是：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"圆周率是："</span>)                                                                                                                                                                    </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line">b=<span class="built_in">float</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'str'</span>&gt;                                                                                                                                                                    </span><br><span class="line">3.1415926</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-整数型（int）"><a href="#2-整数型（int）" class="headerlink" title="2.整数型（int）"></a>2.整数型（int）</h4><p>整数类型常用于小数点取整，或者将input输入的数据转化为整数方便计算例如：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#类型转换</span>
+a <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"我的年龄是："</span><span class="token punctuation">)</span>                                                                                                                                                                    
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span>int<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
+<span class="token comment" spellcheck="true">#取整</span>
+b <span class="token operator">=</span><span class="token number">3.1415</span>                                                                                                                                                                    
+b <span class="token operator">=</span> int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果为：</p>
+<pre class="line-numbers language-python"><code class="language-python">我的年龄是：<span class="token number">20</span>                                                                                                                                                                    
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'int'</span><span class="token operator">></span>
+<span class="token number">3</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h5 id="4-字典（dir）"><a href="#4-字典（dir）" class="headerlink" title="4.字典（dir）"></a>4.字典（dir）</h5><p>字典是python中常常见到的数据类型，表现形式为{“a”:”b”,”c”:”d”}，字典内可以包含一个键值对或者多个其中a和c是字典的键，b和d是键对应的值，我们可以通过键直接获得键对应的值例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dirctory = {<span class="string">"张三"</span>:<span class="string">"23岁"</span>,<span class="string">"李四"</span>:<span class="string">"28岁"</span>,<span class="string">"小明"</span>:<span class="string">"5岁"</span>}                                                                                                                                                                                                      </span><br><span class="line">age =dirctory.get(<span class="string">"张三"</span>)</span><br><span class="line">age2 =dirctory.get(<span class="string">"小明"</span>)</span><br><span class="line"><span class="built_in">print</span>(age,age2)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E:\python项目练习\venv\Scripts\python.exe E:/python项目练习/text.py                                                                                                                                                   </span><br><span class="line">23岁 5岁</span><br><span class="line"></span><br><span class="line">进程已结束，退出代码为 0</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-浮点型（float）"><a href="#3-浮点型（float）" class="headerlink" title="3.浮点型（float）"></a>3.浮点型（float）</h4><p>浮点的用法与int如出一辙，这里就不多举例子了，重要的是数据类型与相应的数据要保持一致例如：</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"圆周率是："</span><span class="token punctuation">)</span>                                                                                                                                                                    
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span>int<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+b<span class="token operator">=</span>float<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：</p>
+<pre class="line-numbers language-python"><code class="language-python">ValueError<span class="token punctuation">:</span> invalid literal <span class="token keyword">for</span> int<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> base <span class="token number">10</span><span class="token punctuation">:</span> <span class="token string">'3.1415926'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这就是类型判断错误引起的报错，正确的写法应该是：</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"圆周率是："</span><span class="token punctuation">)</span>                                                                                                                                                                    
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+b<span class="token operator">=</span>float<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>                                                                                                                                                                    
+<span class="token number">3.1415926</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h4 id="4-字典（dir）"><a href="#4-字典（dir）" class="headerlink" title="4.字典（dir）"></a>4.字典（dir）</h4><p>字典是python中常常见到的数据类型，表现形式为{“a”:”b”,”c”:”d”}，字典内可以包含一个键值对或者多个其中a和c是字典的键，b和d是键对应的值，我们可以通过键直接获得键对应的值例如：</p>
+<pre class="line-numbers language-python"><code class="language-python">dirctory <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"张三"</span><span class="token punctuation">:</span><span class="token string">"23岁"</span><span class="token punctuation">,</span><span class="token string">"李四"</span><span class="token punctuation">:</span><span class="token string">"28岁"</span><span class="token punctuation">,</span><span class="token string">"小明"</span><span class="token punctuation">:</span><span class="token string">"5岁"</span><span class="token punctuation">}</span>                                                                                                                                                                                                      
+age <span class="token operator">=</span>dirctory<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">)</span>
+age2 <span class="token operator">=</span>dirctory<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"小明"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>age<span class="token punctuation">,</span>age2<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">E<span class="token punctuation">:</span>\python项目练习\venv\Scripts\python<span class="token punctuation">.</span>exe E<span class="token punctuation">:</span><span class="token operator">/</span>python项目练习<span class="token operator">/</span>text<span class="token punctuation">.</span>py                                                                                                                                                   
+<span class="token number">23</span>岁 <span class="token number">5</span>岁
+
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>因此通过字典来获取数据只需要找到字典的键即可</p>
 <hr>
-<h5 id="5-列表（set）"><a href="#5-列表（set）" class="headerlink" title="5.列表（set）"></a>5.列表（set）</h5><p>列表同样也是非常常用的数据类型，列表通过索引来获取对应的数据，它的书写格式就是[“a”,”b”,”c”,”d”]，a,b,c,d可以是任意值，列表内也可以包含字典如[“a”,”b”,”c”,”d”,{“x”:”y”}]很多情况下我们把数据存放在列表内，通过循环索引达到列表数据的获取非常实用，例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list =[<span class="string">"a"</span>,<span class="string">"1"</span>,<span class="string">"b"</span>,<span class="string">"f"</span>,<span class="string">"d"</span>,<span class="string">"name"</span>,<span class="string">"age"</span>]                                                                                                                                                                                                                                                                                                                                                                              </span><br><span class="line">n=len(list)</span><br><span class="line"><span class="built_in">print</span>(n)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (0,n):</span><br><span class="line">    date =list[i]</span><br><span class="line">    <span class="built_in">print</span>(date)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">E:\python项目练习\venv\Scripts\python.exe E:/python项目练习/text.py                                                                                                                                                                                                                                                                                                                                                                                                 </span><br><span class="line">7</span><br><span class="line">a</span><br><span class="line">1</span><br><span class="line">b</span><br><span class="line">f</span><br><span class="line">d</span><br><span class="line">name</span><br><span class="line">age</span><br><span class="line">进程已结束，退出代码为 0</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
+<h4 id="5-列表（set）"><a href="#5-列表（set）" class="headerlink" title="5.列表（set）"></a>5.列表（set）</h4><p>列表同样也是非常常用的数据类型，列表通过索引来获取对应的数据，它的书写格式就是[“a”,”b”,”c”,”d”]，a,b,c,d可以是任意值，列表内也可以包含字典如[“a”,”b”,”c”,”d”,{“x”:”y”}]很多情况下我们把数据存放在列表内，通过循环索引达到列表数据的获取非常实用，例如：</p>
+<pre class="line-numbers language-python"><code class="language-python">list <span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"f"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">,</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"age"</span><span class="token punctuation">]</span>                                                                                                                                                                                                                                                                                                                                                                              
+n<span class="token operator">=</span>len<span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    date <span class="token operator">=</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">E<span class="token punctuation">:</span>\python项目练习\venv\Scripts\python<span class="token punctuation">.</span>exe E<span class="token punctuation">:</span><span class="token operator">/</span>python项目练习<span class="token operator">/</span>text<span class="token punctuation">.</span>py                                                                                                                                                                                                                                                                                                                                                                                                 
+<span class="token number">7</span>
+a
+<span class="token number">1</span>
+b
+f
+d
+name
+age
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h5 id="6-元组（tuple）"><a href="#6-元组（tuple）" class="headerlink" title="6. 元组（tuple）"></a>6. 元组（tuple）</h5><p>Python 的元组与列表类似，不同之处在于元组的元素不能修改，且内部不包含重复值，元组使用小括号 ( )，列表使用方括号 [ ]，元组中只包含一个元素时，需要在元素后面添加逗号 , ，否则括号会被当作运算符使用：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="string">'Google'</span>, <span class="string">'Runoob'</span>, 1997, 2000)                                                                                                                           </span><br><span class="line">tup2 = (1, 2, 3, 4, 5 )</span><br><span class="line">tup3 = <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>   <span class="comment">#  不需要括号也可以</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tup1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tup2))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(tup3))</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;class <span class="string">'tuple'</span>&gt;                                                                                                                                      </span><br><span class="line">&lt;class <span class="string">'tuple'</span>&gt;</span><br><span class="line">&lt;class <span class="string">'tuple'</span>&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="6-元组（tuple）"><a href="#6-元组（tuple）" class="headerlink" title="6. 元组（tuple）"></a>6. 元组（tuple）</h4><p>Python 的元组与列表类似，不同之处在于元组的元素不能修改，且内部不包含重复值，元组使用小括号 ( )，列表使用方括号 [ ]，元组中只包含一个元素时，需要在元素后面添加逗号 , ，否则括号会被当作运算符使用：</p>
+<pre class="line-numbers language-python"><code class="language-python">tup1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Google'</span><span class="token punctuation">,</span> <span class="token string">'Runoob'</span><span class="token punctuation">,</span> <span class="token number">1997</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>                                                                                                                           
+tup2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">)</span>
+tup3 <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span>   <span class="token comment" spellcheck="true">#  不需要括号也可以</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>tup1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>tup2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>tup3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span>                                                                                                                                      
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>元组还可以通过下标索引访问元组的值例如：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="string">'Google'</span>, <span class="string">'Runoob'</span>, 1997, 2000)                                                                                                                            </span><br><span class="line">tup2 = (1, 2, 3, 4, 5, 6, 7)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"tup1[0]: "</span>, tup1[0]) <span class="comment">#带""则把变量转化为字符串</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"tup2[1:5]: "</span>, tup2[1:5])</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">E:\python项目练习\venv\Scripts\python.exe E:/python项目练习/text.py                                                                                                                            </span><br><span class="line">tup1[0]:  Google</span><br><span class="line">tup2[1:5]:  (2, 3, 4, 5)</span><br><span class="line"></span><br><span class="line">进程已结束，退出代码为 0</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python">tup1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Google'</span><span class="token punctuation">,</span> <span class="token string">'Runoob'</span><span class="token punctuation">,</span> <span class="token number">1997</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>                                                                                                                            
+tup2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"tup1[0]: "</span><span class="token punctuation">,</span> tup1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#带""则把变量转化为字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"tup2[1:5]: "</span><span class="token punctuation">,</span> tup2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">E<span class="token punctuation">:</span>\python项目练习\venv\Scripts\python<span class="token punctuation">.</span>exe E<span class="token punctuation">:</span><span class="token operator">/</span>python项目练习<span class="token operator">/</span>text<span class="token punctuation">.</span>py                                                                                                                            
+tup1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  Google
+tup2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>元组中的元素值是不允许修改的，但我们可以对元组进行连接组合，如下实例:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (12, 34.56)                                                                                                                                           </span><br><span class="line">tup2 = (<span class="string">'abc'</span>, <span class="string">'xyz'</span>)</span><br><span class="line"><span class="comment"># 以下修改元组元素操作是非法的。</span></span><br><span class="line"><span class="comment"># tup1[0] = 100</span></span><br><span class="line"><span class="comment"># 创建一个新的元组</span></span><br><span class="line">tup3 = tup1 + tup2</span><br><span class="line"><span class="built_in">print</span> (tup3)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E:\python项目练习\venv\Scripts\python.exe E:/python项目练习/text.py                                                                                                                         </span><br><span class="line">(12, 34.56, <span class="string">'abc'</span>, <span class="string">'xyz'</span>)</span><br><span class="line"></span><br><span class="line">进程已结束，退出代码为 0</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-python"><code class="language-python">tup1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">34.56</span><span class="token punctuation">)</span>                                                                                                                                           
+tup2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token string">'xyz'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 以下修改元组元素操作是非法的。</span>
+<span class="token comment" spellcheck="true"># tup1[0] = 100</span>
+<span class="token comment" spellcheck="true"># 创建一个新的元组</span>
+tup3 <span class="token operator">=</span> tup1 <span class="token operator">+</span> tup2
+<span class="token keyword">print</span> <span class="token punctuation">(</span>tup3<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">E<span class="token punctuation">:</span>\python项目练习\venv\Scripts\python<span class="token punctuation">.</span>exe E<span class="token punctuation">:</span><span class="token operator">/</span>python项目练习<span class="token operator">/</span>text<span class="token punctuation">.</span>py                                                                                                                         
+<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">34.56</span><span class="token punctuation">,</span> <span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token string">'xyz'</span><span class="token punctuation">)</span>
 
-
-
-
-
+进程已结束，退出代码为 <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -862,6 +1053,100 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
 
 </main>
@@ -1103,7 +1388,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>
